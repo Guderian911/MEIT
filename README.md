@@ -104,11 +104,15 @@ Change detection data set with pixel-level binary labels；
 
 ### Data Download 
 
-LEVIR-CD: https://justchenhao.github.io/LEVIR/
+LEVIR-CD: https://aistudio.baidu.com/datasetdetail/53795
 
-WHU-CD: https://study.rsgis.whu.edu.cn/pages/download/building_dataset.html
+WHU-CD: https://aistudio.baidu.com/datasetdetail/127802
 
-DSIFN-CD: https://github.com/GeoZcx/A-deeply-supervised-image-fusion-network-for-change-detection-in-remote-sensing-images/tree/master/dataset
+CLCD: https://mail2sysueducn-my.sharepoint.com/personal/liumx23_mail2_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliumx23%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FDataset%2FCLCD&ga=1
+
+### Data Text
+
+If you want to create a list of your dataset, we provide a simple script `get_txt.py` where you only need to modify the file path to get the image name file you want.
 
 ## License
 
@@ -119,14 +123,6 @@ Code is released for non-commercial and research purposes **only**. For commerci
 If you use this code for your research, please cite our paper:
 
 ```
-@Article{chen2021a,
-    title={Remote Sensing Image Change Detection with Transformers},
-    author={Hao Chen, Zipeng Qi and Zhenwei Shi},
-    year={2021},
-    journal={IEEE Transactions on Geoscience and Remote Sensing},
-    volume={},
-    number={},
-    pages={1-14},
-    doi={10.1109/TGRS.2021.3095166}
+
 }
 ```
