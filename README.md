@@ -1,17 +1,18 @@
 # Mixture of Expers Image Transfomer For Bitemporal Remote Sensing Images Change Detection
 
-Here, we provide the pytorch implementation of the paper: Remote Sensing Image Change Detection with Transformers.
+Here, we provide the pytorch implementation of the paper: Mixture of Expers Image Transfomer For Bitemporal Remote Sensing Images Change Detection.
+Core code is placed in model/MEIT.
 
-![image](https://github.com/user-attachments/assets/a2b043b3-ab51-46d7-bc4a-d7fe7ed40a8e)
+![image](./images/img.png)
 
 
 ## Requirements
 
 ```
-Python 3.6
-pytorch 1.6.0
-torchvision 0.7.0
-einops  0.3.0
+Python 3.12
+pytorch 2.3.0
+torchvision 0.18.0
+einops  0.8.0
 ```
 
 ## Installation
@@ -19,7 +20,7 @@ einops  0.3.0
 Clone this repo:
 
 ```shell
-git clone https://github.com/Guderian1/MEIT.git
+git clone https://github.com/Guderian911/MEIT.git
 cd MEIT
 ```
 
@@ -27,7 +28,7 @@ cd MEIT
 
 We have some samples from the [LEVIR-CD](https://justchenhao.github.io/LEVIR/) dataset in the folder `samples` for a quick start.
 
-Firstly, you can download our BIT pretrained model——by [baidu drive, code: 2lyz](https://pan.baidu.com/s/1HiXwpspl6odYQKda6pMuZQ) or [google drive](https://drive.google.com/file/d/1IVdF5a3e1_7DiSndtMkhpZuCSgDLLFcg/view?usp=sharing). After downloaded the pretrained model, you can put it in `checkpoints/BIT_LEVIR/`.
+Firstly, you can download our BIT pretrained model——by [baidu drive, code: MEIT](https://pan.baidu.com/s/1du6BWp_nbffwekbUAUk0IQ). After downloaded the pretrained model, you can put it in `checkpoints/MEIT_LEVIR/`.
 
 Then, run a demo to get started as follows:
 
@@ -48,14 +49,11 @@ gpus=0
 checkpoint_root=checkpoints 
 data_name=LEVIR  # dataset name 
 
-img_size=256
-batch_size=8
+img_size=512
+batch_size=4
 lr=0.01
 max_epochs=200  #training epochs
-net_G=base_transformer_pos_s4_dd8 # model name
-#base_resnet18
-#base_transformer_pos_s4_dd8
-#base_transformer_pos_s4_dd8_dedim8
+net_G=MEIT # model name
 lr_policy=linear
 
 split=train  # training txt
@@ -74,9 +72,9 @@ The detailed script file `eval.sh` is as follows:
 ```cmd
 gpus=0
 data_name=LEVIR # dataset name
-net_G=base_transformer_pos_s4_dd8_dedim8 # model name 
+net_G=MEIT # model name 
 split=test # test.txt
-project_name=BIT_LEVIR # the name of the subfolder in the checkpoints folder 
+project_name=MEIT_LEVIR # the name of the subfolder in the checkpoints folder 
 checkpoint_name=best_ckpt.pt # the name of evaluated model file 
 
 python eval_cd.py --split ${split} --net_G ${net_G} --checkpoint_name ${checkpoint_name} --gpu_ids ${gpus} --project_name ${project_name} --data_name ${data_name}
