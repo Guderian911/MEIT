@@ -26,9 +26,9 @@ cd MEIT
 
 ## Quick Start
 
-We have some samples from the [LEVIR-CD](https://justchenhao.github.io/LEVIR/) dataset in the folder `samples` for a quick start.
+We have some samples from the [LEVIR-CD](https://justchenhao.github.io/LEVIR/) dataset in the `samples` folder for a quick start.
 
-Firstly, you can download our BIT pretrained model——by [baidu drive, code: MEIT](https://pan.baidu.com/s/1du6BWp_nbffwekbUAUk0IQ). After downloaded the pretrained model, you can put it in `checkpoints/MEIT_LEVIR/`.
+Firstly, you can download our BIT pretrained model——by [baidu drive, code: MEIT](https://pan.baidu.com/s/1du6BWp_nbffwekbUAUk0IQ). After downloaded the pretrained model, you can put it in `checkpoints`.
 
 Then, run a demo to get started as follows:
 
@@ -47,7 +47,7 @@ The detailed script file `run_cd.sh` is as follows:
 ```cmd
 gpus=0
 checkpoint_root=checkpoints 
-data_name=LEVIR  # dataset name 
+data_name=train  # dataset name 
 
 img_size=512
 batch_size=4
